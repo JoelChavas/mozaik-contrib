@@ -6,7 +6,7 @@
                 'name':'V1_Exc_L4',
                 'sx':5000.0,
                 'sy':5000.0,
-                'density': 64.0,
+                'density': 8.0,
                 'mpi_safe' : False,    
                 'magnification_factor': 5000.0,
                 'cell': {
