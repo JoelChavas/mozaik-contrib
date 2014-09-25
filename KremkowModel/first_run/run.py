@@ -7,7 +7,7 @@ import sys
 from pyNN import nest
 from mozaik.controller import run_workflow, setup_logging
 import mozaik
-from model import PushPullCCModel
+from model import PushPullCCModel_FirstRun
 from experiments import create_experiments
 from mozaik.storage.datastore import Hdf5DataStore,PickledDataStore
 from analysis_and_visualization import perform_analysis_and_visualization
@@ -26,10 +26,6 @@ logger = mozaik.getMozaikLogger()
 
 if True:
     data_store,model = run_workflow('FFI',PushPullCCModel_FirstRun,create_experiments)
-    model.connectors['V1L4ExcL4ExcConnection'].store_connections(data_store)    
-    model.connectors['V1L4ExcL4InhConnection'].store_connections(data_store)    
-    model.connectors['V1L4InhL4ExcConnection'].store_connections(data_store)    
-    model.connectors['V1L4InhL4InhConnection'].store_connections(data_store)    
     model.connectors['V1AffConnectionOn'].store_connections(data_store)    
     model.connectors['V1AffConnectionOff'].store_connections(data_store)    
     model.connectors['V1AffInhConnectionOn'].store_connections(data_store)    

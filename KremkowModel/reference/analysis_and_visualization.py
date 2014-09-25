@@ -8,8 +8,8 @@ from mozaik.analysis.vision import *
 from mozaik.storage.queries import *
 from mozaik.storage.datastore import PickledDataStore
 from mozaik.tools.circ_stat import circular_dist
-import sys
-sys.path.append('/home/do/mozaik/mozaik-contrib')
+import sys, os
+sys.path.append(os.environ['HOME'] + '/mozaik-contrib')
 from Kremkow_plots import *
 
 def perform_analysis_and_visualization(data_store):
