@@ -24,8 +24,8 @@ MPI_ROOT = 0
 
 logger = mozaik.getMozaikLogger()
 
-if False:
-    data_store,model = run_workflow('FFI',PushPullCCModel,create_experiments)
+if True:
+    data_store,model = run_workflow('FFI',PushPullCCModel_FirstRun,create_experiments)
     model.connectors['V1L4ExcL4ExcConnection'].store_connections(data_store)    
     model.connectors['V1L4ExcL4InhConnection'].store_connections(data_store)    
     model.connectors['V1L4InhL4ExcConnection'].store_connections(data_store)    
