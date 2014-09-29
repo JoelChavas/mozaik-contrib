@@ -1,8 +1,9 @@
 {
-    'component': 'mozaik.models.vision.spatiotemporalfilter.SpatioTemporalFilterRetinaLGN',
+    'component': 'mozaik.models.vision.spatiotemporalfilter.SpikeSourceLGN',
     'params': {
-        'density': 10,#61, # 1 neurons per degree squared
+        'density': 10,#61, # 1.0 neurons per degree squared
         'size'  : (6.0,6.0), # the effective size of the modelled section of retina/lgn
+        'datastore_path' : 'FFI_full_model_____',
         'linear_scaler': 6.0,
         'mpi_reproducible_noise' : True,
         'cached' : False,

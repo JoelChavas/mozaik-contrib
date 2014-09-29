@@ -11,56 +11,6 @@ from mozaik.tools.circ_stat import circular_dist
 import sys, os
 sys.path.append(os.environ['HOME'] + '/mozaik-contrib')
 from Kremkow_plots import *
-
-def perform_analysis_and_visualization_like_first_run(data_store):
-
-
-    if True: # PLOTTING
-
-        if True:
-            dsv = param_filter_query(data_store,st_name='FullfieldDriftingSinusoidalGrating',st_contrast=100)    
-            RasterPlot(dsv,
-                        ParameterSet({
-                            'sheet_name' : 'X_ON', 
-                            'neurons' : sorted(param_filter_query(data_store,sheet_name="X_ON").get_segments()[0].get_stored_spike_train_ids())[0:9], 
-                            'trial_averaged_histogram': False, 
-                            'spontaneous': False
-                                }),
-                        fig_param={'dpi' : 100,'figsize': (14,12)},
-                        plot_file_name="LGNOn_grating.png").plot()
-            ActivityMovie(dsv,
-                          ParameterSet({
-                              'bin_width' : 10,
-                              'scatter': True,
-                              'resolution': 1,
-                              'sheet_name': 'X_ON'
-                                  }), 
-                          fig_param={'dpi' : 50,'figsize': (28,12)},
-                          plot_file_name="LGNOn_movie").plot()
-            #RasterPlot(dsv,
-                        #ParameterSet({
-                            #'sheet_name' : 'X_OFF', 
-                            #'neurons' : sorted(param_filter_query(data_store,sheet_name="X_OFF").get_segments()[0].get_stored_spike_train_ids())[0:9], 
-                            #'trial_averaged_histogram': False, 
-                            #'spontaneous': False
-                                #}),
-                        #fig_param={'dpi' : 100,'figsize': (14,12)},
-                        #plot_file_name="LGNOff_grating.png").plot()
-        #if True:
-            #dsv = param_filter_query(data_store,st_name='NaturalImageWithEyeMovement')            
-            #RasterPlot(dsv,
-                       #ParameterSet({
-                           #'sheet_name' : 'X_ON', 
-                           #'neurons' : sorted(param_filter_query(data_store,sheet_name="X_ON").get_segments()[0].get_stored_spike_train_ids()), 
-                           #'trial_averaged_histogram': False, 
-                           #'spontaneous': False
-                               #}),
-                       #fig_param={'dpi' : 100,'figsize': (14,12)},
-                       #plot_file_name="LGNOn_natural.png").plot()
-            
-        
-        import pylab
-        pylab.show()
         
 def perform_analysis_and_visualization(data_store):
     if True:
@@ -159,7 +109,7 @@ def perform_analysis_and_visualization(data_store):
             dsv = param_filter_query(data_store,st_name='FullfieldDriftingSinusoidalGrating',st_contrast=100)    
             OverviewPlot(dsv,ParameterSet({'sheet_name' : 'V1_Exc_L4', 'neuron' : l4_exc, 'sheet_activity' : {}, 'spontaneous': False}),fig_param={'dpi' : 100,'figsize': (19,12)},plot_file_name="Exc2.png").plot({'Vm_plot.y_lim' : (-67,-56),'Conductance_plot.y_lim' : (0,35.0)})
             OverviewPlot(dsv,ParameterSet({'sheet_name' : 'V1_Exc_L4', 'neuron' : analog_ids[0], 'sheet_activity' : {}, 'spontaneous': False}),fig_param={'dpi' : 100,'figsize': (19,12)},plot_file_name="Exc3.png").plot({'Vm_plot.y_lim' : (-67,-56),'Conductance_plot.y_lim' : (0,35.0)})
-            OverviewPlot(dsv,ParameterSet({'sheet_name' : 'V1_Exc_L4', 'neuron' : analog_ids[1], 'sheet_activity' : {}, 'spontaneous': False}),fig_param={'dpi' : 100,'figsize': (19,12)},plot_file_name="Exc4.png").plot({'Vm_plot.y_lim' : (-67,-56),'Conductance_plot.y_lim' : (0,35.0)})
+            #OverviewPlot(dsv,ParameterSet({'sheet_name' : 'V1_Exc_L4', 'neuron' : analog_ids[1], 'sheet_activity' : {}, 'spontaneous': False}),fig_param={'dpi' : 100,'figsize': (19,12)},plot_file_name="Exc4.png").plot({'Vm_plot.y_lim' : (-67,-56),'Conductance_plot.y_lim' : (0,35.0)})
             #OverviewPlot(dsv,ParameterSet({'sheet_name' : 'V1_Exc_L4', 'neuron' : analog_ids[2], 'sheet_activity' : {}, 'spontaneous': False}),fig_param={'dpi' : 100,'figsize': (19,12)},plot_file_name="Exc5.png").plot({'Vm_plot.y_lim' : (-67,-56),'Conductance_plot.y_lim' : (0,35.0)})
             #OverviewPlot(dsv,ParameterSet({'sheet_name' : 'V1_Exc_L4', 'neuron' : analog_ids[3], 'sheet_activity' : {}, 'spontaneous': False}),fig_param={'dpi' : 100,'figsize': (19,12)},plot_file_name="Exc6.png").plot({'Vm_plot.y_lim' : (-67,-56),'Conductance_plot.y_lim' : (0,35.0)})
             #OverviewPlot(dsv,ParameterSet({'sheet_name' : 'V1_Exc_L4', 'neuron' : analog_ids[4], 'sheet_activity' : {}, 'spontaneous': False}),fig_param={'dpi' : 100,'figsize': (19,12)},plot_file_name="Exc7.png").plot({'Vm_plot.y_lim' : (-67,-56),'Conductance_plot.y_lim' : (0,35.0)})
@@ -167,15 +117,15 @@ def perform_analysis_and_visualization(data_store):
             #OverviewPlot(dsv,ParameterSet({'sheet_name' : 'V1_Exc_L4', 'neuron' : analog_ids[6], 'sheet_activity' : {}, 'spontaneous': False}),fig_param={'dpi' : 100,'figsize': (19,12)},plot_file_name="Exc9.png").plot({'Vm_plot.y_lim' : (-67,-56),'Conductance_plot.y_lim' : (0,35.0)})
             #OverviewPlot(dsv,ParameterSet({'sheet_name' : 'V1_Exc_L4', 'neuron' : analog_ids[7], 'sheet_activity' : {}, 'spontaneous': False}),fig_param={'dpi' : 100,'figsize': (19,12)},plot_file_name="Exc10.png").plot({'Vm_plot.y_lim' : (-67,-56),'Conductance_plot.y_lim' : (0,35.0)})
 
-            #RasterPlot(dsv,
-                        #ParameterSet({
-                            #'sheet_name' : 'X_ON', 
-                            #'neurons' : sorted(param_filter_query(data_store,sheet_name="X_ON").get_segments()[0].get_stored_spike_train_ids())[0:10], 
-                            #'trial_averaged_histogram': False, 
-                            #'spontaneous': False
-                                #}),
-                        #fig_param={'dpi' : 100,'figsize': (14,12)},
-                        #plot_file_name="LGNOn_grating.png").plot()
+            RasterPlot(dsv,
+                        ParameterSet({
+                            'sheet_name' : 'X_ON', 
+                            'neurons' : sorted(param_filter_query(data_store,sheet_name="X_ON").get_segments()[0].get_stored_spike_train_ids())[0:10], 
+                            'trial_averaged_histogram': False, 
+                            'spontaneous': False
+                                }),
+                        fig_param={'dpi' : 100,'figsize': (14,12)},
+                        plot_file_name="LGNOn_grating.png").plot()
                         
             #RasterPlot(dsv,
                         #ParameterSet({
@@ -186,6 +136,16 @@ def perform_analysis_and_visualization(data_store):
                                 #}),
                         #fig_param={'dpi' : 100,'figsize': (14,12)},
                         #plot_file_name="V1_Exc_grating.png").plot()
+                        
+            ActivityMovie(dsv,
+                          ParameterSet({
+                              'bin_width' : 10,
+                              'scatter': True,
+                              'resolution': 1,
+                              'sheet_name': 'X_ON'
+                                  }), 
+                          fig_param={'dpi' : 50,'figsize': (28,12)},
+                          plot_file_name="LGNOn_movie").plot()
             
             #OverviewPlot(dsv,ParameterSet({'sheet_name' : 'V1_Inh_L4', 'neuron' : l4_inh, 'sheet_activity' : {}, 'spontaneous': False}),fig_param={'dpi' : 100,'figsize': (14,12)},plot_file_name="Inh.png").plot({'Vm_plot.y_lim' : (-67,-56),'Conductance_plot.y_lim' : (0,35.0)})
             #OverviewPlot(dsv,ParameterSet({'sheet_name' : 'X_ON', 'neuron' : sorted(param_filter_query(data_store,sheet_name="X_ON").get_segments()[0].get_stored_esyn_ids())[0], 'sheet_activity' : {}, 'spontaneous': False}),fig_param={'dpi' : 100,'figsize': (14,12)},plot_file_name="LGN0On.png").plot()

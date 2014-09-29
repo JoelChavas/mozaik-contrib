@@ -1,0 +1,5 @@
+#To run the full model:
+python run.py nest 1 param/defaults 'full_model'
+
+#To run the full model by reading the LGN spikes
+python run.py nest 1 param_read_LGN_spikes//defaults 'reading_LGN_spikes'

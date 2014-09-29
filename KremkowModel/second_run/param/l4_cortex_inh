@@ -8,7 +8,7 @@
                 'sx': 5000.0,
                 'sy': 5000.0,
                 'density': 16.0,
-                'mpi_safe' : False,
+                'mpi_safe' : True,
                 'magnification_factor': 5000.0,
                     
                 'cell': {

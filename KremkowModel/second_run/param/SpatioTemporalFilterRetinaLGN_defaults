@@ -5,7 +5,7 @@
         'size'  : (6.0,6.0), # the effective size of the modelled section of retina/lgn
         'datastore_path' : '../reference/FFI_reference_____',
         'linear_scaler': 6.0,
-        'mpi_reproducible_noise' : False,
+        'mpi_reproducible_noise' : True,
         'cached' : False,
         'cache_path' : 'retinal_cache/',
         'recorders' :  url("param/lgn_rec"),
