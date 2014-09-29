@@ -24,17 +24,13 @@ MPI_ROOT = 0
 
 logger = mozaik.getMozaikLogger()
 
-if True:
+if False:
     data_store,model = run_workflow('FFI',PushPullCCModel_FirstRun,create_experiments)
-    model.connectors['V1AffConnectionOn'].store_connections(data_store)    
-    model.connectors['V1AffConnectionOff'].store_connections(data_store)    
-    model.connectors['V1AffInhConnectionOn'].store_connections(data_store)    
-    model.connectors['V1AffInhConnectionOff'].store_connections(data_store)    
     data_store.save()
     
 else: 
     setup_logging()
-    data_store = PickledDataStore(load=True,parameters=ParameterSet({'root_directory':'FFI_test_____', 'store_stimuli' : False}),replace=True)
+    data_store = PickledDataStore(load=True,parameters=ParameterSet({'root_directory':'../first_run/FFI_first_run_____', 'store_stimuli' : False}),replace=True)
     logger.info('Loaded data store')
     data_store.save()
 

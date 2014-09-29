@@ -38,21 +38,3 @@ class PushPullCCModel(Model):
         ModularSamplingProbabilisticConnector(self,'V1L4ExcL4InhConnection',cortex_exc_l4,cortex_inh_l4,self.parameters.l4_cortex_exc.L4ExcL4InhConnection).connect()
         ModularSamplingProbabilisticConnector(self,'V1L4InhL4ExcConnection',cortex_inh_l4,cortex_exc_l4,self.parameters.l4_cortex_inh.L4InhL4ExcConnection).connect()
         ModularSamplingProbabilisticConnector(self,'V1L4InhL4InhConnection',cortex_inh_l4,cortex_inh_l4,self.parameters.l4_cortex_inh.L4InhL4InhConnection).connect()
-
-class PushPullCCModel_FirstRun(Model):
-    
-    required_parameters = ParameterSet({
-        'l4_cortex_exc' : ParameterSet, 
-        'l4_cortex_inh' : ParameterSet, 
-        'retina_lgn' : ParameterSet ,
-        'visual_field' : ParameterSet 
-    })
-    
-    def __init__(self, sim, num_threads, parameters):
-        Model.__init__(self, sim, num_threads, parameters)        
-        
-        RetinaLGN = load_component(self.parameters.retina_lgn.component)
-      
-        # Build and instrument the network
-        self.visual_field = VisualRegion(location_x=self.parameters.visual_field.centre[0],location_y=self.parameters.visual_field.centre[1],size_x=self.parameters.visual_field.size[0],size_y=self.parameters.visual_field.size[1])
-        self.input_layer = RetinaLGN(self, self.parameters.retina_lgn.params)
