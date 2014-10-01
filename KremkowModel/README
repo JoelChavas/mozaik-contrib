@@ -1,5 +1,7 @@
 #To run the full model:
 python run.py nest 1 param/defaults 'full_model'
 
-#To run the full model by reading the LGN spikes
+#the previous call writes the data into FFI_full_model____
+#Now, to run the full model by reading the LGN spikes
 python run.py nest 1 param_read_LGN_spikes//defaults 'reading_LGN_spikes'
+#It will read the LGN spikes from the datastore stored in FFI_full_model____
