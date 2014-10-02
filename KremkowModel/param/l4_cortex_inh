@@ -110,8 +110,7 @@
 	        'short_term_plasticity': {
                         'U': 1.0, 
                         'tau_rec': 30.0, 
-                        'tau_psc': 0.0,
-                        'tau_fac': 21.0,
+                        'tau_facil': 21.0,
                     },
     }        
 }

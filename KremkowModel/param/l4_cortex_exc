@@ -49,8 +49,7 @@
         'short_term_plasticity': {
 				            'U': 0.5, 
 				            'tau_rec': 1100.0, 
-			                'tau_psc': 0.0,
-				            'tau_fac': 50.0,
+				            'tau_facil': 50.0,
                         },        
     
         'weight_functions' : {  'f1' : {
@@ -113,8 +112,7 @@
             'short_term_plasticity':  {
                             'U': 1.0, 
                             'tau_rec': 30.0, 
-                            'tau_psc': 0.0,
-                            'tau_fac': 21.0,
+                            'tau_facil': 21.0,
                         },
     }        
 }
