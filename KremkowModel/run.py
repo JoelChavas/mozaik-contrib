@@ -38,7 +38,7 @@ if False:
     
 else: 
     setup_logging()
-    data_store = PickledDataStore(load=True,parameters=ParameterSet({'root_directory':'FFI_hardware_reading_LGN_spikes_____', 'store_stimuli' : False}),replace=True)
+    data_store = PickledDataStore(load=True,parameters=ParameterSet({'root_directory':'FFI_nest_like_hardware_____', 'store_stimuli' : False}),replace=True)
     logger.info('Loaded data store')
     data_store.save()
 
